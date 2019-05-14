@@ -4,10 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- <link rel="stylesheet" href="css/w3.css"> this was replaced by songspg  -->
+<script src="albums.js"></script>
+<link rel="stylesheet" type="text/css" href="song_page.css"/>
 <link rel="stylesheet" href="css/extras.css">
 <link rel="stylesheet" href="css/songspg.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+  </style>
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -40,7 +59,8 @@
 </div>
 
 
-<!-- Container (About Section) -->
+<!-- Container (About Section)
+
 <div class="w3-content w3-container w3-padding-64 w3-row" id="about">
   <div id="Song"  class="listTitles">Song</div>
   <div id="Artist"  class="listTitles">Artist</div>
@@ -54,12 +74,33 @@
       <img src="images/p5.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
     </div>
 
-    <!-- Hide this text on small devices -->
+
+
+    <!-- Hide this text on small devices
     <div class="w3-col m6 w3-hide-small w3-padding-large">
       <p></p>
     </div>
   </div>
 </div>
+<!-- -->
+
+<table>
+  <tr>
+    <th></th>
+    <th>Song</th>
+    <th>Album</th>
+    <th>Artist</th>
+    <th>Recommender</th>
+  </tr>
+  <tr>
+    <!--<td><image class="album_art" src="cbook.jpg"></image></td>-->
+    <td width=5%><img class="album_art" src="cbook.jpg"></img></td>
+    <td>Despacito (Featuring Daddy Yankee)</td>
+    <td>Single</td>
+    <td>Louis Fonsi, Daddy Yankee</td>
+    <td>Johnny</td>
+  </tr>
+</table>
 
 <div class="songList">
   <div id=""> </div>
@@ -103,6 +144,7 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+buildSongList();
 </script>
 
 </body>
