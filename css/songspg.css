@@ -1,5 +1,29 @@
+#pageTitle {
+  margin-top: 1em;
+  font-weight: bolder;
+  text-align: center;
+  color: #FfC1CF;
+  font-size: 54px;
+}
 
+.subTitle{
+  text-align: center;
+  font-size: 20px;
+  color: #FfC1CF;
+}
 
+#titleBackground{
+  height: 200px;
+  background-color: #C9EAF2;
+}
+
+.listTitles{
+  font-size: 36px;
+  text-align: center;
+  font-style: italic;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
 
