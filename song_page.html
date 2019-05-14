@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script src="albums.js"></script>
+		<link rel="stylesheet" type="text/css" href="song_page.css"/>
+		<style>
+			table {
+			  font-family: arial, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			td, th {
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+
+			tr:nth-child(even) {
+			  background-color: #dddddd;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="header_bar">
+			POP
+		</div>
+		<div id="recommenders">
+			your recommenders
+		</div>
+
+		<table>
+			<tr>
+				<th></th>
+				<th>Song</th>
+				<th>Album</th>
+				<th>Artist</th>
+				<th>Recommender</th>
+			</tr>
+			<tr>
+				<!--<td><image class="album_art" src="cbook.jpg"></image></td>-->
+				<td width=5%><img class="album_art" src="cbook.jpg"></img></td>
+				<td>Despacito (Featuring Daddy Yankee)</td>
+				<td>Single</td>
+				<td>Louis Fonsi, Daddy Yankee</td>
+				<td>Johnny</td>
+			</tr>
+		</table>
+	</body>
+
+	<script>  
+		buildSongList(); 		
+	</script>
+</html>
