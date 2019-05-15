@@ -2,10 +2,10 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  border:none;
 }
 
-td, th {
-  border: 1px solid #dddddd;
+td, th, tr {
   text-align: left;
   padding: 8px;
 }

@@ -1,6 +1,34 @@
 function buildSongList() {
-  if (data != null) {
-    console.log(data.length);
+  var songList = document.getElementById("songList");
+
+  if (songList != null) {
+    for (var i = 0; i < data["items"].length; i++) {
+      var table_element = document.createElement("tr");
+      var artists = data["items"][i]["track"]["artists"];
+
+      var artists_string = "";
+      console.log(artists.length);
+      for (var j = 0; j < artists.length; j++) {
+        var artist = artists[j].name;
+        artists_string += artist;
+        if (j != artists.length - 1) {
+          artists_string += ", ";
+        }
+      }
+      //console.log(artists_string);
+
+      var inner_html = `
+        <td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+        <td>${data["items"][i]["track"]["name"]}</td>
+        <td>Single</td>
+        <td>${artists_string}</td>
+        <td>Johnny</td>
+      `;
+      console.log("hello");
+
+      table_element.innerHTML = inner_html;
+      songList.appendChild(table_element);
+    }
   }
 }
 
