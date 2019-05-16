@@ -32,6 +32,18 @@ function buildSongList() {
   }
 }
 
+function filterClick () {
+  $(document).ready(function() {
+      $("#btnFilter").click(function() {
+          $("#songList tbody tr").show();
+          if($("#filter").val.length > 0) {
+              $("#songList tbody tr").filter(function(index, elm) {
+                  return $(elm).html().toUpperCase().indexOf($("#filter").val().toUpperCase()) < 0;
+              }).hide();
+          }
+      });
+  });
+}
 
 
 

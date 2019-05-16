@@ -34,14 +34,12 @@
 	<body>
 
 		<div id="pageTitle"> Pop Songs </div>
-		<div class="subTitle"> Some songs we found that are perfect for you </div>
-
+		<div class="subTitle"> Some songs we found that are perfect for you
+		<p>Looking for a particular Song or Artist?</p> </div>
 		<div id="Filter">
-			<script src="https://www.w3schools.com/lib/w3.js"></script>
-				<p>Looking for a particular Song or Artist?</p>
-				<p>
-				<input oninput="w3.filterHTML('#songList', '.item', this.value)" placeholder="Search for names..">
-				</p>
+				<p><input type="text" id="filter" /></p>
+					<input type="button" id="btnFilter" value="Find New Music!" />
+				<!--<input oninput="w3.filterHTML('#songList', '.item', this.value)" placeholder="Search for names.."> -->
 		</div>
 
 		<!-- Navbar (sit on top) -->
@@ -89,5 +87,6 @@
 
 	<script>
 		buildSongList();
+		filterClick ();
 	</script>
 </html>
