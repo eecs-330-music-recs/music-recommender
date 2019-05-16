@@ -1,6 +1,14 @@
+function getElements(id) {
+  if (typeof id == "object") {
+    return [id];
+  } else {
+    return document.querySelectorAll(id);
+  }
+};
+
 function sortList(id, sel, filter) {
   var a, b, c, i, ii, iii, hit;
-  a = w3.getElements(id);
+  a = getElements(id);
   for (i = 0; i < a.length; i++) {
     b = a[i].querySelectorAll(sel);
     for (ii = 0; ii < b.length; ii++) {
