@@ -32,12 +32,9 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="index.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="page2.html" class="w3-bar-item w3-button w3-hide-small">GENRE</a>
-    <a href="page3.html" class="w3-bar-item w3-button w3-hide-small">RECOMMENDERS</a>
+    <a href="index.html" class="w3-button">HOME</a>
+    <a href="page2.html" class="w3-button w3-hide-small">GENRE</a>
+    <a href="page3.html" class="w3-button w3-hide-small">RECOMMENDERS</a>
     <div id="pageTitle"> Profile Home </div>
     <div class="subTitle"> </div>
   </div>
@@ -84,23 +81,23 @@
 </div>
 <!-- -->
 
-<table>
-  <tr>
-    <th></th>
-    <th>Song</th>
-    <th>Album</th>
-    <th>Artist</th>
-    <th>Recommender</th>
-  </tr>
-  <tr>
-    <!--<td><image class="album_art" src="cbook.jpg"></image></td>-->
-    <td width=5%><img class="album_art" src="cbook.jpg"></img></td>
-    <td>Despacito (Featuring Daddy Yankee)</td>
-    <td>Single</td>
-    <td>Louis Fonsi, Daddy Yankee</td>
-    <td>Johnny</td>
-  </tr>
-</table>
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+</style>
 
 <div class="songList">
   <div id=""> </div>

@@ -1,8 +1,9 @@
 #pageTitle {
-  margin-top: 1em;
+  padding-top: 2.5%;
   font-weight: bolder;
   text-align: center;
   color: #FfC1CF;
+  background-color: #C9EAF2;
   font-size: 54px;
 }
 
@@ -10,10 +11,12 @@
   text-align: center;
   font-size: 20px;
   color: #FfC1CF;
+  background-color: #C9EAF2;
+  padding-bottom: 5%;
+  text-align: center;
 }
 
-#titleBackground{
-  height: 200px;
+.page-link{
   background-color: #C9EAF2;
 }
 

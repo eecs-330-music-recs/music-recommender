@@ -1,4 +1,14 @@
 <html>
+	<title>Pop Songs</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" href="css/w3.css"> this was replaced by songspg  -->
+	<script src="albums.js"></script>
+	<link rel="stylesheet" type="text/css" href="song_page.css"/>
+	<link rel="stylesheet" href="css/extras.css">
+	<link rel="stylesheet" href="css/songspg.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<head>
 		<script src="song_page.js"></script>
 		<link rel="stylesheet" type="text/css" href="song_page.css"/>
@@ -22,12 +32,38 @@
 	</head>
 
 	<body>
-		<div class="header_bar">
-			POP
+
+		<div id="pageTitle"> Pop Songs </div>
+		<div class="subTitle"> Some songs we found that are perfect for you </div>
+
+		<!-- Navbar (sit on top) -->
+		<div class="w3-top">
+		  <div class="w3-bar" id="myNavbar">
+		    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+		      <i class="fa fa-bars"></i>
+		    </a>
+		    <a href="index.html" class="w3-button page-link">HOME</a>
+		    <a href="page2.html" class="w3-button w3-hide-small page-link">GENRE</a>
+		    <a href="page3.html" class="w3-button w3-hide-small page-link">RECOMMENDERS</a>
+		    <div> </div>
+		  </div>
+
+		  <!-- Navbar on small screens -->
+		  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+		      <a href="page2.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 2</a>
+		      <a href="page3.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 3</a>
+		      <a href="page4.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 4</a>
+		      <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+		  </div>
 		</div>
-		<div id="recommenders">
-			your recommendations
+
+		<!-- First Parallax Image with Logo Text -->
+		<div id="titleBackground">
+		  <div class="w3-display-middle" style="white-space:nowrap;">
+		    <p class="w3-center"><em></em></p>
+		  </div>
 		</div>
+
 
 		<table id="songList">
 			<tr>
@@ -51,7 +87,7 @@
 		</table>
 	</body>
 
-	<script>  
-		buildSongList(); 		
+	<script>
+		buildSongList();
 	</script>
 </html>
