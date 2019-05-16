@@ -32,12 +32,9 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="index.html" class="w3-bar-item w3-button">HOME</a>
-    <a href="page2.html" class="w3-bar-item w3-button w3-hide-small">GENRE</a>
-    <a href="page3.html" class="w3-bar-item w3-button w3-hide-small">RECOMMENDERS</a>
+    <a href="index.html" class="w3-button">HOME</a>
+    <a href="page2.html" class="w3-button w3-hide-small">GENRE</a>
+    <a href="page3.html" class="w3-button w3-hide-small">RECOMMENDERS</a>
     <div id="pageTitle"> Profile Home </div>
     <div class="subTitle"> </div>
   </div>
@@ -58,6 +55,27 @@
   </div>
 </div>
 
+<table id="songList">
+  <tr>
+    <th></th>
+    <th>Song</th>
+    <th>Album</th>
+    <th>Artist</th>
+    <th>Recommender</th>
+    <th>+</th>
+    <th>:)</th>
+  </tr>
+  <!--<tr>
+    <td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+    <td>Despacito (Featuring Daddy Yankee)</td>
+    <td>Single</td>
+    <td>Louis Fonsi, Daddy Yankee</td>
+    <td>Johnny</td>
+
+  </tr>-->
+
+</table>
+
 
 <!-- Container (About Section)
 
@@ -76,44 +94,18 @@
 
 
 
-    <!-- Hide this text on small devices
+    <! Hide this text on small devices
     <div class="w3-col m6 w3-hide-small w3-padding-large">
       <p></p>
     </div>
   </div>
 </div>
-<!-- -->
-
-<table>
-  <tr>
-    <th></th>
-    <th>Song</th>
-    <th>Album</th>
-    <th>Artist</th>
-    <th>Recommender</th>
-  </tr>
-  <tr>
-    <!--<td><image class="album_art" src="cbook.jpg"></image></td>-->
-    <td width=5%><img class="album_art" src="cbook.jpg"></img></td>
-    <td>Despacito (Featuring Daddy Yankee)</td>
-    <td>Single</td>
-    <td>Louis Fonsi, Daddy Yankee</td>
-    <td>Johnny</td>
-  </tr>
-</table>
+-->
 
 <div class="songList">
   <div id=""> </div>
 
  </div>
-
-
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-  </div>
-  <p>Powered by Cally</p>
-</footer>
 
 <script>
 // Modal Image Gallery
@@ -144,6 +136,7 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+ // fill out table
 buildSongList();
 </script>
 
