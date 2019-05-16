@@ -51,11 +51,11 @@ function buildSongList() {
       //console.log(artists_string);
 
       var inner_html = `
-        <td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
-        <td>${data["items"][i]["track"]["name"]}</td>
-        <td>Single</td>
-        <td>${artists_string}</td>
-        <td>Johnny</td>
+          <td  width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+          <td>${data["items"][i]["track"]["name"]}</td>
+          <td>Single</td>
+          <td>${artists_string}</td>
+          <td>Johnny</td>
       `;
       console.log("hello");
 
