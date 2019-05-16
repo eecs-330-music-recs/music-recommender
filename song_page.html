@@ -10,11 +10,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<head>
-		<script src="song_page.js">
-			buildSongList();
-			filterClick ();
-		</script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		<script src="song_page.js"></script>
 		<link rel="stylesheet" type="text/css" href="song_page.css"/>
 		<style>
 			table {
@@ -39,11 +35,16 @@
 
 		<div id="pageTitle"> Pop Songs </div>
 		<div class="subTitle"> Some songs we found that are perfect for you
-		<p>Looking for a particular Song or Artist?</p> </div>
-		<div id="Filter">
+			<p>
+				<div>
+					<input id="searchBar" oninput="sortList('#songList', '.item', this.value)" placeholder="Looking for a Song or Artist?">
+				</div>
+			</p>
+		<!--<div id="Filter">
 				<p><input type="text" id="filter" /></p>
 					<input type="button" id="btnFilter" value="Find New Music!" />
-				<!--<input oninput="w3.filterHTML('#songList', '.item', this.value)" placeholder="Search for names.."> -->
+				<input oninput="w3.filterHTML('#songList', '.item', this.value)" placeholder="Search for names.."> -->
+
 		</div>
 
 		<!-- Navbar (sit on top) -->
@@ -68,7 +69,7 @@
 		</div>
 
 		<table id="songList" border="1">
-			<tr>
+			<!--<tr>
 				<th></th>
 				<th>Song</th>
 				<th>Album</th>
@@ -76,16 +77,32 @@
 				<th>Recommender</th>
 				<th>+</th>
 				<th>:)</th>
-			</tr>
-			<!--<tr>
+			</tr>-->
+			<tr class="item">
 				<td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
 				<td>Despacito (Featuring Daddy Yankee)</td>
 				<td>Single</td>
 				<td>Louis Fonsi, Daddy Yankee</td>
 				<td>Johnny</td>
-
-			</tr>-->
+			</tr>
+			<tr class="item">
+				<td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+				<td>Working (Featuring Daddy Yankee)</td>
+				<td>Jk lol</td>
+				<td>Louis Fonsi, Daddy Yankee</td>
+				<td>Sarah</td>
+			</tr>
+			<tr class="item">
+				<td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+				<td>Last Resort</td>
+				<td>Tommy's Greatest Hits</td>
+				<td>Yankee Doodle</td>
+				<td>Larry</td>
+			</tr>
 
 		</table>
 	</body>
+	<!--<script>
+	 	buildSongList();
+	</script>-->
 </html>

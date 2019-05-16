@@ -38,6 +38,10 @@
   margin-top: 1%;
 }
 
+#searchBar{
+  width: 33%;
+}
+
 #Filter{
   text-align: center;
   background-color: #C9EAF2;
