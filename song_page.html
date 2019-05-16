@@ -36,6 +36,14 @@
 		<div id="pageTitle"> Pop Songs </div>
 		<div class="subTitle"> Some songs we found that are perfect for you </div>
 
+		<div id="Filter">
+			<script src="https://www.w3schools.com/lib/w3.js"></script>
+				<p>Looking for a particular Song or Artist?</p>
+				<p>
+				<input oninput="w3.filterHTML('#songList', '.item', this.value)" placeholder="Search for names..">
+				</p>
+		</div>
+
 		<!-- Navbar (sit on top) -->
 		<div class="w3-top">
 		  <div class="w3-bar" id="myNavbar">
@@ -57,8 +65,7 @@
 		  </div>
 		</div>
 
-
-		<table id="songList">
+		<table id="songList" border="1">
 			<tr>
 				<th></th>
 				<th>Song</th>

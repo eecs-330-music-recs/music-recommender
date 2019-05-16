@@ -4,6 +4,7 @@
   text-align: center;
   color: #FfC1CF;
   background-color: #C9EAF2;
+  opacity: 50%;
   font-size: 54px;
 }
 
@@ -13,7 +14,7 @@
   font-weight: bold;
   color: #FfC1CF;
   background-color: #C9EAF2;
-  padding-bottom: 5%;
+  padding-bottom: 1%;
   text-align: center;
 }
 
@@ -35,6 +36,16 @@
 
 #songList{
   margin-top: 1%;
+}
+
+#Filter{
+  text-align: center;
+  background-color: #C9EAF2;
+  color: #FfC1CF;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 
