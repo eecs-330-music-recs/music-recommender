@@ -1,0 +1,36 @@
+/* Brad's CSS */
+
+.bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.bubble {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFC1CF;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 5px 10px #888888;
+}
+
+#bubbleOne {
+
+}
+
+#bubbleTwo {
+
+}
+
+#bubbleThree {
+
+}
+
+#bubbleFour {
+  
+}
