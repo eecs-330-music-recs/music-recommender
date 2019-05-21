@@ -48,16 +48,15 @@ function buildSongList() {
           artists_string += ", ";
         }
       }
-      //console.log(artists_string);
 
       var inner_html = `
-        <td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+        <td width=5%><img class="album_art" src="images/cbook.jpg"></img></td>
         <td>${data["items"][i]["track"]["name"]}</td>
         <td>Single</td>
         <td>${artists_string}</td>
         <td>Johnny</td>
+        <td><button class="add_button">+</button></td>
       `;
-      console.log("hello");
 
       table_element.innerHTML = inner_html;
       songList.appendChild(table_element);
@@ -122,9 +121,7 @@ function buildSongList() {
 
 
 
-
-
-
+var yourSongs = { "items": [] };
 
 var data = {
   "items": [
