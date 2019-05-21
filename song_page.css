@@ -23,3 +23,15 @@ td img {
 .album_art {
 	width: 90%;
 }
+
+.add_button {
+  background-color:green;
+}
+
+.add_button:hover {
+  background-color:black;
+}
+
+.add_button:active, .add_button:focus, .add_button:visited {
+  background-color:pink;
+}
