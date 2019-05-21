@@ -1,167 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>bubble</title>
-
-
-
-    <link rel="stylesheet" href="css/style.css">
-
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="column">
-
-        <div class="top" style="z-index:3;position:relative;">
-            <a onclick="growBubbleOne()">
-                <section class="stage">
-                    <figure class="ball bubble1" id="bubbleOne" style="left: 20;right: 400px;">
-
-                        <h1 class="figuretext"> Pop </h1>
-                    </figure>
-                </section>
-            </a>
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+    <div class="row">
+        <div class="container">
+            <img src="pop.png" alt="Pop" class="image" style="width:300px; height:300px;
+                position: relative; right: auto; left: 300px;">
+            <div class="middle">
+                <div class="text" onclick='window.location.href = "page2.html"'>Songs</div>
+            </div>
         </div>
-        <div class="bottom" style="z-index:-1;position:relative;">
-            <a onclick="growBubbleTwo()">
-                <section class="stage">
-                    <figure class="ball bubble1" id="bubbleTwo" style="left: 20;right: 400px;">
-
-                        <h1 class="figuretext"> Alternative </h1>
-                    </figure>
-                </section>
-            </a>
+        <div class="container">
+            <img src="alt.png" alt="Pop" class="image" style="width:300px; height:300px;
+                position: relative; right: auto; left: 300px;">
+            <div class="middle">
+                <div class="text" onclick='window.location.href = "page2.html"'>Songs</div>
+            </div>
+        </div>
+        <div class="container">
+            <img src="rock.png" alt="Pop" class="image" style="width:300px; height:300px;
+                position: relative; right: auto; left: 300px;">
+            <div class="middle">
+                <div class="text" onclick='window.location.href = "page2.html"'>Songs</div>
+            </div>
+        </div>
+        <div class="container">
+            <img src="hiphop.png" alt="Pop" class="image" style="width:300px; height:300px;
+                position: relative; right: auto; left: 300px;">
+            <div class="middle">
+                <div class="text" onclick='window.location.href = "page2.html"'>Songs</div>
+            </div>
         </div>
     </div>
 
-    <div class="column">
-        <div class="top" style="z-index:-1;position:relative;float:right;">
-            <a onclick="growBubbleThree()">
-                <section class="stage">
-                    <figure class="ball bubble1" id="bubbleThree" style="bottom: 675px; left: 200px;">
 
-                        <h1 class="figuretext"> R&B </h1>
-                    </figure>
-                </section>
-            </a>
-        </div>
-
-        <div class="bottom" style="z-index:-1;position:relative;float:right;">
-            <a onclick="growBubbleFour()">
-                <section class="stage">
-                    <figure class="ball bubble1" id="bubbleFour" style="bottom: 675px; left: 200px;z-index:-1;position:relative;">
-
-                        <h1 class="figuretext"> Rock </h1>
-                    </figure>
-                </section>
-            </a>
-        </div>
     </div>
-
 </body>
-
-<script>
-  // Move and expand bubble
-  var isExpanded = false;
-  function growBubbleOne() {
-    var elem = document.getElementById("bubbleOne");
-    if (isExpanded) {
-      let width = 500;
-      var id = setInterval(frameCollapse, 5);
-      var button = document.getElementById("deleteable");
-      button.parentNode.removeChild(button);
-      function frameCollapse() {
-        elem.style.zIndex = -1;
-        if (width == 300) {
-          clearInterval(id);
-          isExpanded = false;
-          // Delete Button!
-        } else {
-          width--;
-          elem.style.width = width + 'px';
-          elem.style.height = width + 'px';
-        }
-      }
-    } else {
-      let width = 300;
-      var id2 = setInterval(frameExpand, 5);
-      function frameExpand() {
-        elem.style.zIndex = 3;
-        if (width == 500) {
-          clearInterval(id2);
-          // Create button
-          var button = document.createElement("button");
-          button.innerHTML = "Songs";
-          //button.setAttribute("id", "deleteable");
-          button.id="deleteable";
-          //button.opacity ="0.9"
-          // Append to bubble
-          elem.appendChild(button);
-
-          // Add event handler
-          button.addEventListener ("click", function() {
-            document.location.href = 'page4.html';
-          });
-          isExpanded = true;
-        } else {
-          width++;
-          elem.style.width = width + 'px';
-          elem.style.height = width + 'px';
-        }
-      }
-    }
-  }
-  // Commented out because "Pop" is the only page implemented.
-  /*
-  function growBubbleTwo() {
-    var elem = document.getElementById("bubbleTwo");
-    var id = setInterval(frame, 5);
-    var width = 100;
-    function frame() {
-      elem.style.zIndex = 3;
-      if (width == 200) {
-        clearInterval(id);
-      } else {
-        width++;
-        elem.style.width = width + '%';
-        elem.style.height = width + '%';
-      }
-    }
-  }
-  function growBubbleThree() {
-    var elem = document.getElementById("bubbleThree");
-    var id = setInterval(frame, 5);
-    var width = 100;
-    function frame() {
-      elem.style.zIndex = 3;
-      if (width == 200) {
-        clearInterval(id);
-      } else {
-        width++;
-        elem.style.width = width + '%';
-        elem.style.height = width + '%';
-      }
-    }
-  }
-  function growBubbleFour() {
-    var elem = document.getElementById("bubbleFour");
-    var id = setInterval(frame, 5);
-    var width = 100;
-    function frame() {
-      elem.style.zIndex = 3;
-      if (width == 200) {
-        clearInterval(id);
-      } else {
-        width++;
-        elem.style.width = width + '%';
-        elem.style.height = width + '%';
-      }
-    }
-  }
-  */
-</script>
 
 </html>
