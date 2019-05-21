@@ -37,8 +37,8 @@ function buildSongList() {
   if (songList != null) {
     for (var i = 0; i < data["items"].length; i++) {
       var table_element = document.createElement("tr");
+      table_element.className += "item";
       var artists = data["items"][i]["track"]["artists"];
-
       var artists_string = "";
       console.log(artists.length);
       for (var j = 0; j < artists.length; j++) {
