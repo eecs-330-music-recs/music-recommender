@@ -1,3 +1,36 @@
+function getElements(id) {
+  if (typeof id == "object") {
+    return [id];
+  } else {
+    return document.querySelectorAll(id);
+  }
+};
+
+function sortList(id, sel, filter) {
+  var a, b, c, i, ii, iii, hit;
+  a = getElements(id);
+  for (i = 0; i < a.length; i++) {
+    b = a[i].querySelectorAll(sel);
+    for (ii = 0; ii < b.length; ii++) {
+      hit = 0;
+      if (b[ii].innerText.toUpperCase().indexOf(filter.toUpperCase()) > -1) {
+        hit = 1;
+      }
+      c = b[ii].getElementsByTagName("*");
+      for (iii = 0; iii < c.length; iii++) {
+        if (c[iii].innerText.toUpperCase().indexOf(filter.toUpperCase()) > -1) {
+          hit = 1;
+        }
+      }
+      if (hit == 1) {
+        b[ii].style.display = "";
+      } else {
+        b[ii].style.display = "none";
+      }
+    }
+  }
+};
+
 function buildSongList() {
   var songList = document.getElementById("songList");
 
@@ -7,8 +40,8 @@ function buildSongList() {
     for (var i = 0; i < data["items"].length; i++) {
       var id = "button_" + idx;
       var table_element = document.createElement("tr");
+      table_element.className += "item";
       var artists = data["items"][i]["track"]["artists"];
-
       var artists_string = "";
       for (var j = 0; j < artists.length; j++) {
         var artist = artists[j].name;
@@ -33,7 +66,7 @@ function buildSongList() {
       idx++;
     }
   }
-}
+};
 
 function addSongToLib(button_id) {
   var button = document.getElementById(button_id);
@@ -49,7 +82,6 @@ function addSongToLib(button_id) {
   button.style = "background-color: pink;";
   }
 }
-
 
 
 

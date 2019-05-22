@@ -1,4 +1,14 @@
 <html>
+	<title>Pop Songs</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" href="css/w3.css"> this was replaced by songspg  -->
+	<script src="albums.js"></script>
+	<link rel="stylesheet" type="text/css" href="song_page.css"/>
+	<link rel="stylesheet" href="css/extras.css">
+	<link rel="stylesheet" href="css/songspg.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<head>
 		<script src="song_page.js"></script>
 		<link rel="stylesheet" type="text/css" href="song_page.css"/>
@@ -22,14 +32,43 @@
 	</head>
 
 	<body>
-		<div class="header_bar">
-			POP
-		</div>
-		<div id="recommenders">
-			your recommendations
+
+		<div id="pageTitle"> Pop Songs </div>
+		<div class="subTitle"> Some songs we found that are perfect for you
+			<p>
+				<div>
+					<input id="searchBar" oninput="sortList('#songList', '.item', this.value)" placeholder="Looking for a Song or Artist?">
+				</div>
+			</p>
+		<!--<div id="Filter">
+				<p><input type="text" id="filter" /></p>
+					<input type="button" id="btnFilter" value="Find New Music!" />
+				<input oninput="w3.filterHTML('#songList', '.item', this.value)" placeholder="Search for names.."> -->
+
 		</div>
 
-		<table id="songList">
+		<!-- Navbar (sit on top) -->
+		<div class="w3-top">
+		  <div class="w3-bar" id="myNavbar">
+		    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+		      <i class="fa fa-bars"></i>
+		    </a>
+		    <a href="index.html" class="">HOME</a>
+		    <a href="index.html" class="">GENRE</a>
+		    <a href="page3.html" class="">RECOMMENDERS</a>
+				<a href="profile.html" class="">MY PROFILE</a>
+		    <div> </div>
+		  </div>
+		</div>
+
+		<!-- First Parallax Image with Logo Text -->
+		<div id="titleBackground">
+		  <div class="w3-display-middle" style="white-space:nowrap;">
+		    <p class="w3-center"><em></em></p>
+		  </div>
+		</div>
+
+		<table id="songList" border="1">
 			<tr>
 				<th></th>
 				<th>Song</th>
@@ -39,19 +78,31 @@
 				<th>+</th>
 				<th>:)</th>
 			</tr>
-			<!--<tr>
+			<!--<tr class="item">
 				<td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
 				<td>Despacito (Featuring Daddy Yankee)</td>
 				<td>Single</td>
 				<td>Louis Fonsi, Daddy Yankee</td>
 				<td>Johnny</td>
-
+			</tr>
+			<tr class="item">
+				<td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+				<td>Working (Featuring Daddy Yankee)</td>
+				<td>Jk lol</td>
+				<td>Louis Fonsi, Daddy Yankee</td>
+				<td>Sarah</td>
+			</tr>
+			<tr class="item">
+				<td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+				<td>Last Resort</td>
+				<td>Tommy's Greatest Hits</td>
+				<td>Yankee Doodle</td>
+				<td>Larry</td>
 			</tr>-->
 
 		</table>
 	</body>
-
-	<script>  
-		buildSongList(); 		
-	</script>
+	<script>
+	 	buildSongList();
+	</script>-
 </html>
