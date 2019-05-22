@@ -3,7 +3,7 @@
   font-weight: bolder;
   text-align: center;
   color: #FfC1CF;
-  background-color: #C9EAF2;
+  background-color: #3C4F76;
   opacity: 50%;
   font-size: 54px;
 }
@@ -13,13 +13,13 @@
   font-size: 20px;
   font-weight: bold;
   color: #FfC1CF;
-  background-color: #C9EAF2;
+  background-color: #3C4F76;
   padding-bottom: 1%;
   text-align: center;
 }
 
 .page-link{
-  background-color: #C9EAF2;
+  background-color: #3C4F76;
 }
 
 #Song{
@@ -44,7 +44,7 @@
 
 #Filter{
   text-align: center;
-  background-color: #C9EAF2;
+  background-color: #3C4F76;
   color: Black;
   padding-bottom: 2%;
   padding-top: 2%;
