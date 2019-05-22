@@ -34,13 +34,15 @@ function sortList(id, sel, filter) {
 function buildSongList() {
   var songList = document.getElementById("songList");
 
+  var idx = 0;
+
   if (songList != null) {
     for (var i = 0; i < data["items"].length; i++) {
+      var id = "button_" + idx;
       var table_element = document.createElement("tr");
       table_element.className += "item";
       var artists = data["items"][i]["track"]["artists"];
       var artists_string = "";
-      console.log(artists.length);
       for (var j = 0; j < artists.length; j++) {
         var artist = artists[j].name;
         artists_string += artist;
@@ -55,27 +57,31 @@ function buildSongList() {
         <td>Single</td>
         <td>${artists_string}</td>
         <td>Johnny</td>
-        <td><button class="add_button">+</button></td>
+        <td><button class="add_button" id=${id} onclick=addSongToLib(this.id)>+</button></td>
       `;
 
       table_element.innerHTML = inner_html;
       songList.appendChild(table_element);
+
+      idx++;
     }
   }
 };
 
-//function filterClick () {
-//  $(song_page).ready(function() {
-//      $("#btnFilter").click(function() {
-//         $("#songList tbody tr").show();
-//          if($("#filter").val.length > 0) {
-//              $("#songList tbody tr").filter(function(index, elm) {
-//                  return $(elm).html().toUpperCase().indexOf($("#filter").val().toUpperCase()) < 0;
-//              }).hide();
-//          }
-//      });
-//  });
-//}
+function addSongToLib(button_id) {
+  var button = document.getElementById(button_id);
+  var button_idx = button_id.slice(7);
+
+  // if (user_name == "user1") {
+  //   user1_songs["items"].push(data["items"][button_idx])
+  // }
+  if (!user1_songs["items"].includes(data["items"][button_idx])) {
+    user1_songs["items"].push(data["items"][button_idx])
+    console.log(user1_songs);
+
+  button.style = "background-color: pink;";
+  }
+}
 
 
 
@@ -121,7 +127,9 @@ function buildSongList() {
 
 
 
-var yourSongs = { "items": [] };
+
+var user1_songs = { "items": [] };
+var user2_songs = { "items": [] };
 
 var data = {
   "items": [
