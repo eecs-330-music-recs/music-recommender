@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html>
-<title>Your Profile</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="css/w3.css"> this was replaced by songspg  -->
-<script src="albums.js"></script>
-<link rel="stylesheet" type="text/css" href="song_page.css"/>
-<link rel="stylesheet" href="css/extras.css">
-<link rel="stylesheet" href="css/songspg.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
+<head>
+  <title>Your Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="css/w3.css"> this was replaced by songspg  -->
+  <script src="song_page.js"></script>
+  <link rel="stylesheet" type="text/css" href="song_page.css"/>
+  <link rel="stylesheet" href="css/extras.css">
+  <link rel="stylesheet" href="css/songspg.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
 
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
 
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-  </style>
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+</head>
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -35,6 +37,7 @@
     <a href="index.html" class="w3-button">HOME</a>
     <a href="page2.html" class="w3-button w3-hide-small">GENRE</a>
     <a href="page3.html" class="w3-button w3-hide-small">RECOMMENDERS</a>
+    <a href="login.html" class="w3-button w3-hide-small">SIGN OUT</a>
     <div id="pageTitle"> Profile Home </div>
     <div class="subTitle"> </div>
   </div>
@@ -55,27 +58,33 @@
   </div>
 </div>
 
-<table id="songList">
-  <tr>
-    <th></th>
-    <th>Song</th>
-    <th>Album</th>
-    <th>Artist</th>
-    <th>Recommender</th>
-    <th>+</th>
-    <th>:)</th>
-  </tr>
-  <!--<tr>
-    <td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
-    <td>Despacito (Featuring Daddy Yankee)</td>
-    <td>Single</td>
-    <td>Louis Fonsi, Daddy Yankee</td>
-    <td>Johnny</td>
+<div class="profile">
+  <div id="userInfo">
+    <!-- <button onclick="askUser()">Who is Signed in?</button> -->
+  </div>
+  <div class="description">
+    Here are the songs currently in your playlist:
+  </div>
+  <div class="myPlaylist2">
+    <table id="songList">
+      <tr>
+        <th></th>
+        <th>Song</th>
+        <th>Album</th>
+        <th>Artist</th>
+      </tr>
+      <!--<tr>
+        <td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
+        <td>Despacito (Featuring Daddy Yankee)</td>
+        <td>Single</td>
+        <td>Louis Fonsi, Daddy Yankee</td>
+        <td>Johnny</td>
 
-  </tr>-->
+      </tr>-->
 
-</table>
-
+    </table>
+  </div>
+</div>
 
 <!-- Container (About Section)
 
@@ -107,7 +116,21 @@
 
  </div>
 
+</body>
 <script>
+function askUser() {
+  console.log(sessionStorage.getItem('user'));
+}
+function sayHello() {
+  var statement = document.getElementById("userInfo");
+  if (sessionStorage.getItem('user')=="brad") {
+    statement.innerHTML = "Hello Brad!"
+  }
+  if (sessionStorage.getItem('user')=="john") {
+    statement.innerHTML = "Hello John!"
+  }
+}
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -137,8 +160,8 @@ function toggleFunction() {
     }
 }
  // fill out table
-buildSongList();
+buildProfileSongs();
+sayHello();
 </script>
 
-</body>
 </html>

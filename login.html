@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>login</title>
+  <link rel="stylesheet" href="css/brad.css">
+  <link rel="stylesheet" href="css/extras.css">
+  <script src="song_page.js"></script>
+</head>
+
+<body>
+  <div>
+    <p class="title"> <!--onclick="this.classList.toggle('explode')"-->
+      Human Music Discovery
+    </p>
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input id="username" type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input id="password" type="password" placeholder="Enter Password" name="psw" required>
+
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+</body>
+
+<script>
+  function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+    if ((user=='brad')&&(pass=='ramos')) {
+      sessionStorage.setItem('user',"brad");
+      sessionStorage.setItem('song_list',JSON.stringify(brad_song))
+      window.location.href = 'index.html';
+    } else if ((user=='john')&&(pass=='smith')) {
+      sessionStorage.setItem('user',"john");
+      sessionStorage.setItem('song_list',JSON.stringify(john_song))
+      window.location.href = 'index.html';
+    } else {
+      alert('Incorrect Username or Password.');
+    }
+    //console.log(user,pass);
+  };
+</script>
+</html>
