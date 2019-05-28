@@ -77,13 +77,13 @@ function buildProfileSongs() {
   // Load song list from session storage
   if (sessionStorage.getItem('brad')) {
     mySongs = JSON.parse(sessionStorage.getItem('song_list'));
-    //console.log(mySongs);
+    console.log("inside if statement ",mySongs);
   }
   if (sessionStorage.getItem('john')) {
     mySongs = JSON.parse(sessionStorage.getItem('song_list'));
-    //console.log(mySongs);
+    console.log("inside if statement ",mySongs);
   }
-  console.log(mySongs);
+  //console.log(mySongs);
 
   if (songList != null) {
   for (var i = 0; i < mySongs["items"].length; i++) {
