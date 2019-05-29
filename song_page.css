@@ -35,3 +35,8 @@ td img {
 .add_button:active, .add_button:focus, .add_button:visited {
   background-color:pink;
 }
+#myDiv{
+  margin-top: 25%;
+  margin-left: 55%;
+  margin-bottom: -20%;
+}
