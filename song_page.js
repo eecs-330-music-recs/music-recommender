@@ -75,11 +75,11 @@ function buildProfileSongs() {
   console.log(sessionStorage.getItem('song_list'));
   //console.log(sessionStorage.getItem('bradSongs'));
   // Load song list from session storage
-  if (sessionStorage.getItem('brad')) {
+  if (sessionStorage.getItem('user') == "brad") {
     mySongs = JSON.parse(sessionStorage.getItem('song_list'));
     //console.log(mySongs);
   }
-  if (sessionStorage.getItem('john')) {
+  if (sessionStorage.getItem('user') == "john") {
     mySongs = JSON.parse(sessionStorage.getItem('song_list'));
     //console.log(mySongs);
   }
