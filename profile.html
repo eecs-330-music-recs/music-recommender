@@ -28,9 +28,12 @@
         background-color: #dddddd;
       }
     </style>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- Numeric JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
 </head>
 <body>
-
+<div id="myDiv"></div>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
@@ -159,9 +162,20 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+var d = [{
+  values: [19, 26, 55],
+  labels: ['Residential', 'Non-Residential', 'Utility'],
+  type: 'pie'
+}];
+
+var layout = {height:400, width:500};
  // fill out table
-buildProfileSongs();
+
+Plotly.newPlot('myDiv', d, layout)
+
 sayHello();
+buildProfileSongs();
 </script>
 
 </html>
