@@ -86,6 +86,10 @@
       </tr>-->
 
     </table>
+
+      <div id="pie">
+
+      </div>
   </div>
 </div>
 
@@ -167,12 +171,15 @@ var d = [{
   values: [19, 26, 55],
   labels: ['Residential', 'Non-Residential', 'Utility'],
   type: 'pie'
+  //title; "Your Top Recommenders"
 }];
 
-var layout = {height:400, width:500};
+var layout = {title: 'Your Top Recommenders',};
+var title = {title: "Your Top Recommenders"}
+
  // fill out table
 
-Plotly.newPlot('myDiv', d, layout)
+Plotly.newPlot('myDiv', d, layout, title)
 
 sayHello();
 buildProfileSongs();
