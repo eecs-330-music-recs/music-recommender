@@ -169,24 +169,13 @@ function toggleFunction() {
 }
 
 function initializeChart() {
-  var pie = [{
-    values: [100],
-    labels: ['No recommenders :('],
-    type: 'pie'
-  }];
-
+  var pie = JSON.parse(sessionStorage.getItem('pieChart'));
+  var pieData = JSON.parse(sessionStorage.getItem('pieData'));
+  console.log(JSON.stringify(pieData));
+  console.log(JSON.stringify(pie));
   var layout = {title: 'Your Top Recommenders',};
   var title = {title: "Your Top Recommenders"};
   Plotly.newPlot('pieChart', pie, layout, title);
-
-  sessionStorage.setItem('pieChart', JSON.stringify(pie));
-
-  var pieData = [{
-    count: [],
-    names: []
-  }]
-
-  sessionStorage.setItem('pieData', JSON.stringify(pieData));
 }
 
 function populateChart() {
@@ -209,9 +198,9 @@ function populateChart() {
 
 //populateChart();
 initializeChart();
-addToChart('hello');
-addToChart('hello');
-addToChart('goodbye');
+//addToChart('hello');
+//addToChart('hello');
+//addToChart('goodbye');
 sayHello();
 buildProfileSongs();
 </script>

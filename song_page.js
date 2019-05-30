@@ -58,6 +58,11 @@ function buildSongList() {
             }
             //recommender
             recommender = names[Math.floor(Math.random() * names.length)];
+            /* // Why don't we make another sessionStorage item to store the names? nope
+            var rec_list = JSON.parse(sessionStorage.getItem('all_recommenders'));
+            rec_list["names"].push(recommender);
+            sessionStorage.setItem('all_recommenders', JSON.stringify(rec_list));
+            */
 
             var inner_html = `
       <td width=5%><img class="album_art" src="images/cbook.jpg"></img></td>
@@ -80,7 +85,7 @@ function buildProfileSongs() {
     var songList = document.getElementById("songList");
     var idx = 0;
     var mySongs;
-    console.log(sessionStorage.getItem('song_list'));
+    //console.log(sessionStorage.getItem('song_list'));
     //console.log(sessionStorage.getItem('bradSongs'));
     // Load song list from session storage
     if (sessionStorage.getItem('user') == "brad") {
@@ -139,10 +144,23 @@ function addSongToLib(button_id) {
     mySongs = JSON.parse(sessionStorage.getItem('song_list'));
     mySongs["items"].push(data["items"][button_idx]);
     sessionStorage.setItem('song_list', JSON.stringify(mySongs));
-    console.log(sessionStorage.getItem('song_list'));
+    //console.log(sessionStorage.getItem('song_list'));
 
     button.style = "background-color: pink;";
 }
+
+/*
+function addRecommenderToChart(button_id) {
+  var button = document.getElementById(button_id);
+  var button_idx = button_id.slice(7);
+
+  var recommenders = [];
+  recommenders = JSON.parse(sessionStorage.getItem('pieData'));
+  recommenders["count"].push(1);
+  recommenders["names"].push()
+  sessionStorage.setItem('song_list', JSON.stringify(recommenders));
+  //console.log(sessionStorage.getItem('song_list'));
+}*/
 
 function saveToSessionStorage(addedSong) {
     var mySongs = [];
