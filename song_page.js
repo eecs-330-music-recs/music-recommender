@@ -57,7 +57,7 @@ function buildSongList() {
       <td>Single</td>
       <td>${artists_string}</td>
       <td>Johnny</td>
-      <td><button class="add_button" id=${id} onclick=addSongToLib(this.id)>+</button></td>
+      <td><button class="add_button" id=${id} onclick=addSongToLib(this.id);addRecommenderToChart(this.id)>+</button></td>
       `;
 
       table_element.innerHTML = inner_html;
@@ -77,26 +77,25 @@ function buildProfileSongs() {
   // Load song list from session storage
   if (sessionStorage.getItem('user') == "brad") {
     mySongs = JSON.parse(sessionStorage.getItem('song_list'));
-    console.log("inside if statement ",mySongs);
+    //console.log("inside if statement ",mySongs);
   }
   if (sessionStorage.getItem('user') == "john") {
     mySongs = JSON.parse(sessionStorage.getItem('song_list'));
-    console.log("inside if statement ",mySongs);
+    //console.log("inside if statement ",mySongs);
   }
-  //console.log(mySongs);
 
   if (songList != null) {
-  for (var i = 0; i < mySongs["items"].length; i++) {
-  var id = "button_" + idx;
-  var table_element = document.createElement("tr");
-  table_element.className += "item";
-  var artists = mySongs["items"][i]["track"]["artists"];
-  var artists_string = "";
-  for (var j = 0; j < artists.length; j++) {
-  var artist = artists[j].name;
-  artists_string += artist;
-  if (j != artists.length - 1) {
-  artists_string += ", ";
+    for (var i = 0; i < mySongs["items"].length; i++) {
+    var id = "button_" + idx;
+    var table_element = document.createElement("tr");
+    table_element.className += "item";
+    var artists = mySongs["items"][i]["track"]["artists"];
+    var artists_string = "";
+    for (var j = 0; j < artists.length; j++) {
+    var artist = artists[j].name;
+    artists_string += artist;
+    if (j != artists.length - 1) {
+    artists_string += ", ";
 }
 }
 
@@ -144,7 +143,6 @@ function saveToSessionStorage(addedSong) {
   console.log(mySongs);
   sessionStorage.setItem('session', JSON.stringify(mySongs));
 }
-
 
 
 

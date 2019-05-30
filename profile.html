@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="css/w3.css"> this was replaced by songspg  -->
   <script src="song_page.js"></script>
+  <script src="profile.js"></script>
   <link rel="stylesheet" type="text/css" href="song_page.css"/>
   <link rel="stylesheet" href="css/extras.css">
   <link rel="stylesheet" href="css/songspg.css">
@@ -33,7 +34,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
 </head>
 <body>
-<div id="myDiv"></div>
+<div id="pieChart"></div>
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
@@ -167,20 +168,50 @@ function toggleFunction() {
     }
 }
 
-var d = [{
+function initializeChart() {
+  var pie = [{
+    values: [100],
+    labels: ['No recommenders :('],
+    type: 'pie'
+  }];
+
+  var layout = {title: 'Your Top Recommenders',};
+  var title = {title: "Your Top Recommenders"};
+  Plotly.newPlot('pieChart', pie, layout, title);
+
+  sessionStorage.setItem('pieChart', JSON.stringify(pie));
+
+  var pieData = [{
+    count: [],
+    names: []
+  }]
+
+  sessionStorage.setItem('pieData', JSON.stringify(pieData));
+}
+
+function populateChart() {
+  var d = [{
   values: [19, 26, 55],
   labels: ['Residential', 'Non-Residential', 'Utility'],
   type: 'pie'
   //title; "Your Top Recommenders"
 }];
 
-var layout = {title: 'Your Top Recommenders',};
-var title = {title: "Your Top Recommenders"}
+  var layout = {title: 'Your Top Recommenders',};
+  var title = {title: "Your Top Recommenders"};
 
- // fill out table
+   // fill out table
 
-Plotly.newPlot('myDiv', d, layout, title)
+  Plotly.newPlot('pieChart', d, layout, title);
+}
 
+
+
+//populateChart();
+initializeChart();
+addToChart('hello');
+addToChart('hello');
+addToChart('goodbye');
 sayHello();
 buildProfileSongs();
 </script>
