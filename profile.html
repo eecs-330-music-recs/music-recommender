@@ -12,72 +12,86 @@
   <link rel="stylesheet" href="css/songspg.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
+  <style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
 
-      td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
 
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-    </style>
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  </style>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <!-- Numeric JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
 </head>
 <body>
-<div id="pieChart"></div>
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a href="index.html" class="w3-button">HOME</a>
-    <a href="page2.html" class="w3-button w3-hide-small">GENRE</a>
-    <a href="page3.html" class="w3-button w3-hide-small">RECOMMENDERS</a>
-    <a href="login.html" class="w3-button w3-hide-small">SIGN OUT</a>
-    <div id="pageTitle"> Profile Home </div>
-    <div class="subTitle"> </div>
-  </div>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <a href="index.html" class="w3-button">HOME</a>
+      <a href="page2.html" class="w3-button w3-hide-small">GENRE</a>
+      <a href="page3.html" class="w3-button w3-hide-small">RECOMMENDERS</a>
+      <a href="login.html" class="w3-button w3-hide-small">SIGN OUT</a>
+      <div id="pageTitle"> Profile Home </div>
+      <div class="subTitle"> </div>
+    </div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
       <a href="page2.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 2</a>
       <a href="page3.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 3</a>
       <a href="page4.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 4</a>
       <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+    </div>
   </div>
-</div>
 
-<!-- First Parallax Image with Logo Text -->
-<div id="titleBackground">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <p class="w3-center"><em></em></p>
+  <!-- First Parallax Image with Logo Text -->
+  <div id="titleBackground">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <p class="w3-center"><em></em></p>
+    </div>
   </div>
-</div>
 
-<div class="profile">
-  <div id="userInfo">
-    <!-- <button onclick="askUser()">Who is Signed in?</button> -->
-  </div>
-  <div class="description">
-    Here are the songs currently in your playlist:
-  </div>
-  <div class="myPlaylist2">
-    <table id="songList">
-      <tr>
-        <th></th>
-        <th>Song</th>
-        <th>Album</th>
-        <th>Artist</th>
-      </tr>
-      <!--<tr>
+  <div class="profile">
+    <div class="columns">
+      <div id="userInfo">
+        <!-- <button onclick="askUser()">Who is Signed in?</button> -->
+      </div>
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn">View Recommender Stats</button>
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="pieChart" style="margin: 15% auto;"></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="description">
+      Here are the songs currently in your playlist:
+    </div>
+    <div class="myPlaylist2">
+      <table id="songList">
+        <tr>
+          <th></th>
+          <th>Song</th>
+          <th>Album</th>
+          <th>Artist</th>
+        </tr>
+        <!--<tr>
         <td width=5%><img class="album_art" src="./cbook.jpg"></img></td>
         <td>Despacito (Featuring Daddy Yankee)</td>
         <td>Single</td>
@@ -87,42 +101,39 @@
       </tr>-->
 
     </table>
-
-      <div id="pie">
-
-      </div>
+    <div id="pie"></div>
   </div>
 </div>
 
 <!-- Container (About Section)
 
 <div class="w3-content w3-container w3-padding-64 w3-row" id="about">
-  <div id="Song"  class="listTitles">Song</div>
-  <div id="Artist"  class="listTitles">Artist</div>
-  <div id="Album"  class="listTitles">Album</div>
-  <div id="Genre"  class="listTitles">Genre</div>
-  <div id="Recommender"  class="listTitles">Recommender</div>
-  <div id="Interact"  class="listTitles">Interact</div>
+<div id="Song"  class="listTitles">Song</div>
+<div id="Artist"  class="listTitles">Artist</div>
+<div id="Album"  class="listTitles">Album</div>
+<div id="Genre"  class="listTitles">Genre</div>
+<div id="Recommender"  class="listTitles">Recommender</div>
+<div id="Interact"  class="listTitles">Interact</div>
 <div class="w3-row"><div id="" class="listTitles"></div>
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
-      <img src="images/p5.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
-    </div>
+<div class="w3-col m6 w3-center w3-padding-large">
+<p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
+<img src="images/p5.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+</div>
 
 
 
-    <! Hide this text on small devices
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p></p>
-    </div>
-  </div>
+<! Hide this text on small devices
+<div class="w3-col m6 w3-hide-small w3-padding-large">
+<p></p>
+</div>
+</div>
 </div>
 -->
 
 <div class="songList">
   <div id=""> </div>
 
- </div>
+</div>
 
 </body>
 <script>
@@ -150,22 +161,22 @@ function onClick(element) {
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
+  var navbar = document.getElementById("myNavbar");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+  } else {
+    navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+  }
 }
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
 }
 
 function initializeChart() {
@@ -173,27 +184,53 @@ function initializeChart() {
   var pieData = JSON.parse(sessionStorage.getItem('pieData'));
   console.log(JSON.stringify(pieData));
   console.log(JSON.stringify(pie));
-  var layout = {title: 'Your Top Recommenders',};
+  var layout = {title: 'Your Top Recommenders',height: 600,width: 1200,};
   var title = {title: "Your Top Recommenders"};
   Plotly.newPlot('pieChart', pie, layout, title);
 }
 
 function populateChart() {
   var d = [{
-  values: [19, 26, 55],
-  labels: ['Residential', 'Non-Residential', 'Utility'],
-  type: 'pie'
-  //title; "Your Top Recommenders"
-}];
+    values: [19, 26, 55],
+    labels: ['Residential', 'Non-Residential', 'Utility'],
+    type: 'pie'
+    //title; "Your Top Recommenders"
+  }];
 
   var layout = {title: 'Your Top Recommenders',};
   var title = {title: "Your Top Recommenders"};
 
-   // fill out table
+  // fill out table
 
   Plotly.newPlot('pieChart', d, layout, title);
 }
 
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 
 //populateChart();

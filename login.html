@@ -36,13 +36,27 @@
     }];
     sessionStorage.setItem('all_recommenders',JSON.stringify(all_rec));
     console.log(sessionStorage.getItem('all_recommenders'));*/
+    //initialize pie chart data
+    var pie = [{
+      values: [100],
+      labels: ['No recommenders :('],
+      type: 'pie'
+    }];
+    sessionStorage.setItem('pieChart', JSON.stringify(pie));
+    var pieData = [{
+      count: [],
+      names: []
+    }]
+    sessionStorage.setItem('pieData', JSON.stringify(pieData));
+
+
 
     // "Log in"
     if ((user=='brad')&&(pass=='ramos')) {
       // Set user to brad and his initialize his corresponding song list
       sessionStorage.setItem('user',"brad");
       sessionStorage.setItem('song_list',JSON.stringify(brad_song))
-      //initialize pie chart data
+      /*//initialize pie chart data
       var pie = [{
         values: [100],
         labels: ['No recommenders :('],
@@ -53,14 +67,14 @@
         count: [],
         names: []
       }]
-      sessionStorage.setItem('pieData', JSON.stringify(pieData));
+      sessionStorage.setItem('pieData', JSON.stringify(pieData));*/
 
       // Navigate to home page
       window.location.href = 'index.html';
     } else if ((user=='john')&&(pass=='smith')) { //Do the same thing for John, respectively
       sessionStorage.setItem('user',"john");
       sessionStorage.setItem('song_list',JSON.stringify(john_song))
-      var pie = [{
+      /*var pie = [{
         values: [100],
         labels: ['No recommenders :('],
         type: 'pie'
@@ -70,7 +84,7 @@
         count: [],
         names: []
       }];
-      sessionStorage.setItem('pieData', JSON.stringify(pieData));
+      sessionStorage.setItem('pieData', JSON.stringify(pieData));*/
 
       window.location.href = 'index.html';
     } else {

@@ -5,14 +5,14 @@ function addRecommenderToChart(id) {
   var table = document.getElementById('songList');
   var row = table.rows[parseInt(button_idx) + 1];
   var recommender = row.getElementsByTagName('td')[4].innerText;
-  console.log("recommender is  ", recommender);
+  //console.log("recommender is  ", recommender);
   addToChart(recommender);
 }
 
 function addToChart(recommender) {
-  //var recommender = sessionStorage.getItem('recommender');
 
   var data = JSON.parse(sessionStorage.getItem('pieChart'));
+  console.log(sessionStorage.getItem('pieData'));
   var pieData = JSON.parse(sessionStorage.getItem('pieData'));
 
   if (data[0].labels[0] == "No recommenders :(") {
@@ -43,6 +43,8 @@ function addToChart(recommender) {
       data[0].labels.push(recommender);
       pieData[0].names.push(recommender);
       pieData[0].count.push(1);
+      //console.log(pieData[0].count);
+      sessionStorage.setItem('pieData', JSON.stringify(pieData));
 
       var pie = [{
         values: getPercentages(pieData[0].count, pieData[0].names),
