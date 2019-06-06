@@ -7,6 +7,7 @@
   <!-- <link rel="stylesheet" href="css/w3.css"> this was replaced by songspg  -->
   <script src="song_page.js"></script>
   <script src="profile.js"></script>
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" type="text/css" href="song_page.css"/>
   <link rel="stylesheet" href="css/extras.css">
   <link rel="stylesheet" href="css/songspg.css">
@@ -34,31 +35,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
 </head>
 <body>
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar" id="myNavbar">
-      <a href="index.html" class="w3-button">HOME</a>
-      <a href="page2.html" class="w3-button w3-hide-small">GENRE</a>
-      <a href="page3.html" class="w3-button w3-hide-small">RECOMMENDERS</a>
-      <a href="login.html" class="w3-button w3-hide-small">SIGN OUT</a>
-      <div id="pageTitle"> Profile Home </div>
-      <div class="subTitle"> </div>
-    </div>
-
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-      <a href="page2.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 2</a>
-      <a href="page3.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 3</a>
-      <a href="page4.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PAGE 4</a>
-      <a href="#" class="w3-bar-item w3-button">SEARCH</a>
-    </div>
+  <div class="title"> <!--onclick="this.classList.toggle('explode')"-->
+    My Profile
   </div>
-
-  <!-- First Parallax Image with Logo Text -->
-  <div id="titleBackground">
-    <div class="w3-display-middle" style="white-space:nowrap;">
-      <p class="w3-center"><em></em></p>
-    </div>
+  <div class="topnav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a class="active"href="profile.html">My Profile</a>
+      <a href="login.html">Sign Out</a>
   </div>
 
   <div class="profile">

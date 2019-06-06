@@ -9,6 +9,9 @@
   height: 50%;
 }
 
+body {
+  background-color: #C9EAF2;
+}
 /* Bordered form */
 form {
   border: 3px solid #f1f1f1;
@@ -60,7 +63,7 @@ button:hover {
 .title {
   background-color: #3C4F76;
   font-size: 80px;
-  color: #FfC1CF;
+  color: #FFC1CF;
   width: 100%;
   text-align: center;
 }
